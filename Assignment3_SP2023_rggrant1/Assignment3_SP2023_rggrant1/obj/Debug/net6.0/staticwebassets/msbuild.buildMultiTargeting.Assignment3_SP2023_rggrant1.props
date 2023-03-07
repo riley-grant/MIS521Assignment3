@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Assignment3_SP2023_rggrant1.props" />
+</Project>

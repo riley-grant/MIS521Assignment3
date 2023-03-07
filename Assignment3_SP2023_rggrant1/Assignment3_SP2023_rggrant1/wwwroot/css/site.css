@@ -1,0 +1,45 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(https://media.istockphoto.com/id/1091743486/photo/shiny-red-silk-curtains-on-stage-3d-rendering.jpg?b=1&s=170667a&w=0&k=20&c=qhNqNFRHoQlq0CnGtiyqO_Ft1QoHnAq0eSoTCmebhNc=);
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+    font-family: 'Courier New', monospace;
+    text-decoration:underline,overline
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+}

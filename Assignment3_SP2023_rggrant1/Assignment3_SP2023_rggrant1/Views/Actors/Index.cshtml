@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Assignment3_SP2023_rggrant1.Models.Actor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color: white; font-size: 25px; font-family: 'Courier New', monospace; text-decoration:underline,overline">Index</h1>
+
+<p style="color: white; font-size: 25px; font-family: 'Courier New', monospace; text-decoration:underline,overline">
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="color: white; font-size: 20px; font-family: 'Courier New', monospace; text-decoration:underline,overline">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMBDLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActorPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IMBDLink)
+            </td>
+                <td>
+                    @if (item.ActorPhoto != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.ActorPhoto);
+                        var imgSrc = string.Format("data:image/jpg;base64,{0}", base64);
+                        <img src="@imgSrc" height="100" width="100" style="border-radius:50%" />
+                    }
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
